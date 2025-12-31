@@ -92,6 +92,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "concurrently": "^8.2.0",
+    "fast-check": "^4.5.3",
     "postcss": "^8",
     "tailwind-merge": "^2",
     "tailwindcss": "^3",

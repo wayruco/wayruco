@@ -1,5 +1,5 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { cn } from "@/lib/utils";
 
 /**
  * Responsive grid configuration
@@ -41,7 +41,10 @@ export interface ResponsiveGridProps extends React.HTMLAttributes<HTMLDivElement
  *   <div>Item 2</div>
  * </ResponsiveGrid>
  */
-export const ResponsiveGrid = React.forwardRef<HTMLDivElement, ResponsiveGridProps>(
+export const ResponsiveGrid = React.forwardRef<
+  HTMLDivElement,
+  ResponsiveGridProps
+>(
   (
     {
       columns = { mobile: 1, tablet: 2, desktop: 3, wide: 4 },
@@ -53,17 +56,17 @@ export const ResponsiveGrid = React.forwardRef<HTMLDivElement, ResponsiveGridPro
       style,
       ...props
     },
-    ref
+    ref,
   ) => {
     // For auto-fit, use inline style with CSS Grid
     const gridStyle = autoFit
       ? {
-          display: 'grid',
+          display: "grid",
           gridTemplateColumns: `repeat(auto-fit, minmax(${minColWidth}px, 1fr))`,
           gap: `${gap.mobile}px`,
         }
       : {
-          display: 'grid',
+          display: "grid",
           gridTemplateColumns: `repeat(${columns.mobile}, minmax(0, 1fr))`,
           gap: `${gap.mobile}px`,
         };
@@ -90,22 +93,22 @@ export const ResponsiveGrid = React.forwardRef<HTMLDivElement, ResponsiveGridPro
           }
         }
       `
-      : '';
+      : "";
 
     return (
       <div
         ref={ref}
-        className={cn('responsive-grid', className)}
+        className={cn("responsive-grid", className)}
         style={{ ...gridStyle, ...style }}
         {...props}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 
-ResponsiveGrid.displayName = 'ResponsiveGrid';
+ResponsiveGrid.displayName = "ResponsiveGrid";
 
 /**
  * Responsive Flex Component
@@ -126,10 +129,10 @@ ResponsiveGrid.displayName = 'ResponsiveGrid';
 export interface ResponsiveFlexProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Flex direction at each breakpoint */
   direction?: {
-    mobile?: 'row' | 'column';
-    tablet?: 'row' | 'column';
-    desktop?: 'row' | 'column';
-    wide?: 'row' | 'column';
+    mobile?: "row" | "column";
+    tablet?: "row" | "column";
+    desktop?: "row" | "column";
+    wide?: "row" | "column";
   };
   /** Gap/gutter size at each breakpoint (in pixels) */
   gap?: {
@@ -139,48 +142,57 @@ export interface ResponsiveFlexProps extends React.HTMLAttributes<HTMLDivElement
     wide?: number;
   };
   /** Justify content alignment */
-  justify?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';
+  justify?:
+    | "flex-start"
+    | "center"
+    | "flex-end"
+    | "space-between"
+    | "space-around"
+    | "space-evenly";
   /** Align items alignment */
-  align?: 'flex-start' | 'center' | 'flex-end' | 'stretch';
+  align?: "flex-start" | "center" | "flex-end" | "stretch";
   /** Allow wrapping */
   wrap?: boolean;
 }
 
-export const ResponsiveFlex = React.forwardRef<HTMLDivElement, ResponsiveFlexProps>(
+export const ResponsiveFlex = React.forwardRef<
+  HTMLDivElement,
+  ResponsiveFlexProps
+>(
   (
     {
-      direction = { mobile: 'column', tablet: 'row' },
+      direction = { mobile: "column", tablet: "row" },
       gap = { mobile: 16, desktop: 24 },
-      justify = 'flex-start',
-      align = 'flex-start',
+      justify = "flex-start",
+      align = "flex-start",
       wrap = true,
       className,
       style,
       children,
       ...props
     },
-    ref
+    ref,
   ) => {
-    const flexStyle = {
-      display: 'flex',
-      flexDirection: direction.mobile as 'row' | 'column',
+    const flexStyle: React.CSSProperties = {
+      display: "flex",
+      flexDirection: direction.mobile as "row" | "column",
       gap: `${gap.mobile}px`,
       justifyContent: justify,
       alignItems: align,
-      flexWrap: wrap ? 'wrap' : 'nowrap',
+      flexWrap: wrap ? "wrap" : ("nowrap" as const),
     };
 
     return (
       <div
         ref={ref}
-        className={cn('responsive-flex', className)}
+        className={cn("responsive-flex", className)}
         style={{ ...flexStyle, ...style }}
         {...props}
       >
         {children}
       </div>
     );
-  }
+  },
 );
 
-ResponsiveFlex.displayName = 'ResponsiveFlex';
+ResponsiveFlex.displayName = "ResponsiveFlex";

@@ -1,0 +1,36 @@
+
+> @wayruco/landing@1.0.0 build /home/ed/Documents/wayru/wayruco/apps/landing
+> next build
+
+Next.js Config: {
+  isGitHubPages: false,
+  useRepositoryPath: false,
+  basePath: '',
+  assetPrefix: '',
+  note: 'Building for custom domain (wayru.co) - no basePath needed'
+}
+  ▲ Next.js 14.2.23
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    9.94 kB         106 kB
+└ ○ /_not-found                          873 B          88.1 kB
++ First Load JS shared by all            87.2 kB
+  ├ chunks/1dd3208c-528ef6f7e16d856e.js  53.6 kB
+  ├ chunks/528-a8ef6c61686529d3.js       31.7 kB
+  └ other shared chunks (total)          1.86 kB
+
+
+○  (Static)  prerendered as static content
+
