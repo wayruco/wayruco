@@ -16,6 +16,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.1] - 2025-12-31
+
+### Added
+- feat: add GitHub Pages deployment workflow and documentation (1a021db)
+
+### Other
+- docs: add mobile-first landing page upgrade summary (9b0cfa7)
+- chore: bump version to 1.1.0 (a7d7a2f)
+- chore: auto-commit before version bump (42ec6cd)
+
+
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+- 
+
 ## [1.1.0] - 2025-12-31
 
 ### Other
