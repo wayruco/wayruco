@@ -16,6 +16,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.0.5] - 2025-12-31
+
+### Other
+- initial commit: WayruCo - Open Internet Initiative (3194457)
+
+
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+- 
+
 ## [1.0.4] - 2025-12-31
 
 ### Added
