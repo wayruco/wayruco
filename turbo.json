@@ -1,19 +1,46 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "build/**"]
+      "outputs": ["dist/**", ".next/**", "build/**", "out/**"]
+    },
+    "build:packages": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "build:apps": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "out/**"]
+    },
+    "build:contracts": {
+      "dependsOn": ["^build"],
+      "outputs": ["artifacts/**", "build/**"]
     },
     "test": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*.ts*", "test/**/*.ts*"]
+    },
+    "test:unit": {
+      "dependsOn": ["build"],
+      "inputs": ["src/**/*.ts*", "test/**/*.ts*"]
+    },
+    "test:integration": {
       "dependsOn": ["build"],
       "inputs": ["src/**/*.ts*", "test/**/*.ts*"]
     },
     "lint": {
       "outputs": []
     },
+    "format": {
+      "outputs": []
+    },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:landing": {
       "cache": false,
       "persistent": true
     }

@@ -1,0 +1,50 @@
+{
+  "version": "1.0.5",
+  "buildNumber": "2025.12.31.306",
+  "releaseDate": "2025-12-31",
+  "metadata": {
+    "name": "WayruCo",
+    "description": "Interactive timeline showcasing Wayru Network's journey from founding to open source transition. Features a cybernetic visualization with scroll-based milestone tracking.",
+    "author": "Edward Calderon",
+    "license": "MIT",
+    "repository": "https://github.com/wayruco/wayruco",
+    "homepage": "https://wayru.co"
+  },
+  "git": {
+    "commit": "31944574e2ad93acaf76a336f3894888ceb580cd",
+    "branch": "main",
+    "tag": ""
+  },
+  "build": {
+    "environment": "production",
+    "nodeVersion": "22.18.0",
+    "timestamp": "2025-12-31T09:58:26.246Z",
+    "duration": 0
+  },
+  "dependencies": {
+    "react": "^18",
+    "next": "14.2.23",
+    "typescript": "^5"
+  },
+  "features": {
+    "ui": "shadcn/ui",
+    "styling": "tailwindcss",
+    "state": "react hooks",
+    "authentication": "supabase",
+    "payments": "stripe"
+  },
+  "changelog": {
+    "current": {
+      "version": "1.0.0",
+      "date": "2024-12-28",
+      "changes": [
+        "Initial release",
+        "Setup Next.js application",
+        "Configure shadcn/ui components",
+        "Add Tailwind CSS styling",
+        "Setup Supabase authentication",
+        "Configure Stripe payments"
+      ]
+    }
+  }
+}

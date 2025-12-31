@@ -1,0 +1,310 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-31T00:00:00Z",
+  "repositories": [
+    {
+      "name": "wayru-os-services",
+      "source": "https://github.com/Wayru-Network/wayru-os-services",
+      "workspace": "packages/wayru-os-services",
+      "category": "package",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Core OS-level services for Wayru Network infrastructure",
+      "technologies": ["C", "Python"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "wayru-os",
+      "source": "https://github.com/Wayru-Network/wayru-os",
+      "workspace": "packages/wayru-os",
+      "category": "package",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Wayru operating system core",
+      "technologies": ["Python"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "rewards-server",
+      "source": "https://github.com/Wayru-Network/rewards-server",
+      "workspace": "apps/rewards-server",
+      "category": "app",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Rewards distribution server for Wayru Network",
+      "technologies": ["TypeScript", "Node.js"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "explorer-web",
+      "source": "https://github.com/Wayru-Network/explorer-web",
+      "workspace": "apps/explorer-web",
+      "category": "app",
+      "priority": "important",
+      "status": "pending",
+      "description": "Web-based explorer for Wayru Network",
+      "technologies": ["TypeScript", "React"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "boost-stake",
+      "source": "https://github.com/Wayru-Network/boost-stake",
+      "workspace": "contracts/boost-stake",
+      "category": "contract",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Staking contract for Wayru Network token economy",
+      "technologies": ["Rust"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "solana-sign-service",
+      "source": "https://github.com/Wayru-Network/solana-sign-service",
+      "workspace": "apps/solana-sign-service",
+      "category": "app",
+      "priority": "important",
+      "status": "pending",
+      "description": "Solana transaction signing service",
+      "technologies": ["TypeScript", "Node.js"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "tx-tracker-service",
+      "source": "https://github.com/Wayru-Network/tx-tracker-service",
+      "workspace": "apps/tx-tracker-service",
+      "category": "app",
+      "priority": "important",
+      "status": "pending",
+      "description": "Transaction tracking service for Wayru Network",
+      "technologies": ["TypeScript", "Node.js"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "depin-stake",
+      "source": "https://github.com/Wayru-Network/depin-stake",
+      "workspace": "contracts/depin-stake",
+      "category": "contract",
+      "priority": "important",
+      "status": "pending",
+      "description": "DePIN staking contract",
+      "technologies": ["Rust"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "operators-web",
+      "source": "https://github.com/Wayru-Network/operators-web",
+      "workspace": "apps/operators-web",
+      "category": "app",
+      "priority": "important",
+      "status": "pending",
+      "description": "Web interface for node operators",
+      "technologies": ["TypeScript", "React"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "network-services",
+      "source": "https://github.com/Wayru-Network/network-services",
+      "workspace": "packages/network-services",
+      "category": "package",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Core network services for Wayru infrastructure",
+      "technologies": ["Go"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "operators-app",
+      "source": "https://github.com/Wayru-Network/operators-app",
+      "workspace": "apps/operators-app",
+      "category": "app",
+      "priority": "important",
+      "status": "pending",
+      "description": "Mobile/desktop app for node operators",
+      "technologies": ["TypeScript", "React Native"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "gateway",
+      "source": "https://github.com/Wayru-Network/gateway",
+      "workspace": "packages/gateway",
+      "category": "package",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Gateway service for Wayru Network",
+      "technologies": ["Go"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "fas",
+      "source": "https://github.com/Wayru-Network/fas",
+      "workspace": "packages/fas",
+      "category": "package",
+      "priority": "important",
+      "status": "pending",
+      "description": "File access service",
+      "technologies": ["Go"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "mobile-app",
+      "source": "https://github.com/Wayru-Network/mobile-app",
+      "workspace": "apps/mobile-app",
+      "category": "app",
+      "priority": "important",
+      "status": "pending",
+      "description": "Mobile application for Wayru Network",
+      "technologies": ["TypeScript", "React Native"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "rewards-system-program",
+      "source": "https://github.com/Wayru-Network/rewards-system-program",
+      "workspace": "contracts/rewards-system-program",
+      "category": "contract",
+      "priority": "critical",
+      "status": "pending",
+      "description": "Rewards system smart contract",
+      "technologies": ["Rust"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "solana-contract-admin-web",
+      "source": "https://github.com/Wayru-Network/solana-contract-admin-web",
+      "workspace": "apps/solana-contract-admin-web",
+      "category": "app",
+      "priority": "important",
+      "status": "pending",
+      "description": "Admin interface for Solana contracts",
+      "technologies": ["TypeScript", "React"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "radius-infra",
+      "source": "https://github.com/Wayru-Network/radius-infra",
+      "workspace": "packages/radius-infra",
+      "category": "tool",
+      "priority": "nice-to-have",
+      "status": "pending",
+      "description": "Infrastructure as code for Wayru deployment",
+      "technologies": ["Shell", "Terraform"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "react-native-pin-code",
+      "source": "https://github.com/Wayru-Network/react-native-pin-code",
+      "workspace": "packages/react-native-pin-code",
+      "category": "package",
+      "priority": "nice-to-have",
+      "status": "pending",
+      "description": "PIN code component for React Native",
+      "technologies": ["TypeScript", "React Native"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    },
+    {
+      "name": "strapi-plugin-postgis",
+      "source": "https://github.com/Wayru-Network/strapi-plugin-postgis",
+      "workspace": "packages/strapi-plugin-postgis",
+      "category": "package",
+      "priority": "nice-to-have",
+      "status": "pending",
+      "description": "PostGIS plugin for Strapi CMS",
+      "technologies": ["TypeScript", "Node.js"],
+      "maintainers": ["wayru-team@wayru.network"],
+      "upstreamSync": {
+        "enabled": true,
+        "lastSync": null,
+        "branch": "main"
+      }
+    }
+  ]
+}

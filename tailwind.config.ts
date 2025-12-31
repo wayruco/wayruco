@@ -10,6 +10,17 @@ const config = {
   ],
   prefix: "",
   theme: {
+  	screens: {
+  		'mobile': '320px',
+  		'sm': '480px',
+  		'tablet': '481px',
+  		'md': '768px',
+  		'desktop': '769px',
+  		'lg': '1024px',
+  		'wide': '1025px',
+  		'xl': '1280px',
+  		'2xl': '1536px'
+  	},
   	container: {
   		center: true,
   		padding: '2rem',

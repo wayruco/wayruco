@@ -1,4 +1,4 @@
-# WayruCo: The Open Internet Initiative
+# WayruCO: The Open Internet Initiative
 
 > **Decentralized connectivity for everyone. Open source. Community-driven. Forever.**
 
@@ -18,9 +18,39 @@ A world where internet access is a fundamental human right, where communities ow
 
 ---
 
-## 📖 What is WayruCo?
+## 📖 What is WayruCO?
 
-WayruCo is an interactive timeline and documentation hub showcasing the Wayru Network's journey from conception (March 2021) through its transition to open source (December 2025). This project preserves the mission and enables the community to continue building decentralized internet infrastructure.
+WayruCO is a monorepo hub that preserves and continues the Wayru Network mission. Following Wayru Inc.'s transition to open source, WayruCO serves as:
+
+- **Technology Steward**: Maintaining mission-critical Wayru Network repositories
+- **Community Hub**: Central coordination point for global contributors
+- **Documentation Center**: Comprehensive guides for mission, architecture, and deployment
+- **Development Platform**: Unified workspace for building decentralized internet infrastructure
+
+### Monorepo Structure
+
+```
+wayruco/
+├── apps/              # User-facing applications
+│   ├── landing/       # Community landing page
+│   ├── explorer-web/  # Network explorer
+│   └── ...
+├── packages/          # Shared libraries and SDKs
+│   ├── manifest/      # Repository manifest system
+│   ├── sdk/           # Core Wayru SDK
+│   └── ...
+├── contracts/         # Smart contracts
+│   ├── rewards-system-program/
+│   ├── staking/
+│   └── ...
+├── docs/              # Documentation
+│   ├── mission/       # Philosophy, vision, history
+│   ├── technical/     # Architecture and APIs
+│   └── deployment/    # Deployment guides
+└── .kiro/             # Agentic workflow configuration
+    ├── steering/      # AI agent guidelines
+    └── specs/         # Feature specifications
+```
 
 ### Key Features
 
@@ -37,7 +67,7 @@ WayruCo is an interactive timeline and documentation hub showcasing the Wayru Ne
 
 ### Prerequisites
 - Node.js 22.18.0+
-- npm or yarn
+- pnpm 8.0+
 
 ### Installation
 
@@ -47,25 +77,50 @@ git clone https://github.com/wayruco/wayruco.git
 cd wayruco
 
 # Install dependencies
-npm install
+pnpm install
 
-# Start development server
-npm run dev
+# Start development server for landing page
+pnpm dev:landing
 ```
 
-Visit `http://localhost:3000` to see the interactive timeline.
+Visit `http://localhost:3000` to see the landing page.
+
+### Monorepo Commands
+
+```bash
+# Start all apps in development mode
+pnpm dev
+
+# Build all packages and apps
+pnpm build
+
+# Build specific workspace
+pnpm build:landing
+pnpm build:packages
+pnpm build:apps
+pnpm build:contracts
+
+# Run tests
+pnpm test
+pnpm test:unit
+pnpm test:integration
+
+# Lint and format
+pnpm lint
+pnpm format
+```
 
 ### Production Build
 
 ```bash
 # Build for production
-npm run build
+pnpm build
 
 # Start production server
-npm start
+pnpm start
 
-# Or export as static site
-npm run build:static
+# Or export landing page as static site
+pnpm build:landing
 ```
 
 ---
@@ -100,15 +155,20 @@ npm run build:static
 
 ## 📚 Documentation
 
+### Mission & Philosophy
+- [Philosophy](./docs/mission/PHILOSOPHY.md) - Core beliefs and values
+- [Vision](./docs/mission/VISION.md) - Long-term goals and roadmap
+- [History](./docs/mission/HISTORY.md) - Wayru Network origins and journey
+
 ### Getting Started
 - [Installation Guide](./docs/INSTALLATION.md)
 - [Development Setup](./docs/DEVELOPMENT.md)
 - [Architecture Overview](./docs/ARCHITECTURE.md)
 
-### Features
-- [Timeline Component](./docs/TIMELINE.md)
-- [Cybernetic Scene](./docs/VISUALIZATION.md)
-- [Audio System](./docs/AUDIO.md)
+### Monorepo Structure
+- [Workspace Organization](./docs/WORKSPACE.md)
+- [Contributing Guide](./CONTRIBUTING.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
 
 ### Deployment
 - [Deployment Guide](./DEPLOYMENT_CHECKLIST.md)

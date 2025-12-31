@@ -1,145 +1,116 @@
-# Contributing to WayruCo
+# Contributing to WayruCO
 
-Thank you for your interest in contributing to WayruCo! We welcome contributions from everyone and appreciate your help in making this project better.
+Thank you for your interest in contributing to WayruCO! We welcome contributions from everyone, regardless of experience level. This document provides guidelines and instructions for contributing.
 
-## 🚀 Getting Started
+## Code of Conduct
 
-### Prerequisites
-- Node.js 22.18.0+
-- npm or yarn
-- Git
-- Basic knowledge of React/TypeScript (for code contributions)
+Please read and follow our [Code of Conduct](./CODE_OF_CONDUCT.md). We are committed to providing a welcoming and inclusive environment for all contributors.
 
-### Setup Development Environment
+## How to Contribute
+
+### 1. Fork the Repository
 
 ```bash
-# Fork the repository on GitHub
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/wayruco.git
+# Using GitHub CLI
+gh repo fork wayruco/wayruco --clone
+
+# Or manually fork on GitHub and clone
+git clone https://github.com/YOUR-USERNAME/wayruco.git
 cd wayruco
-
-# Add upstream remote
 git remote add upstream https://github.com/wayruco/wayruco.git
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
 ```
 
-## 📋 Types of Contributions
+### 2. Create a Feature Branch
 
-### 🐛 Bug Reports
-Found a bug? Help us fix it!
+```bash
+# Update your local main branch
+git fetch upstream
+git checkout main
+git merge upstream/main
 
-1. Check [existing issues](https://github.com/wayruco/wayruco/issues)
-2. Create a new issue with:
-   - Clear title and description
-   - Steps to reproduce
-   - Expected vs actual behavior
-   - Screenshots/videos if applicable
-   - Environment details (OS, browser, Node version)
+# Create a new branch for your feature
+git checkout -b feature/your-feature-name
+```
 
-### ✨ Feature Requests
-Have an idea? We'd love to hear it!
+### 3. Make Your Changes
 
-1. Check [discussions](https://github.com/wayruco/wayruco/discussions)
-2. Create a discussion or issue with:
-   - Clear description of the feature
-   - Use cases and benefits
-   - Possible implementation approach
-   - Any relevant mockups or examples
+- Write clear, well-documented code
+- Follow the project's code style
+- Add tests for new functionality
+- Update documentation as needed
 
-### 📝 Documentation
-Help us improve documentation!
+### 4. Commit Your Changes
 
-- Fix typos and clarify explanations
-- Add examples and tutorials
-- Translate documentation
-- Improve code comments
+```bash
+# Stage your changes
+git add .
 
-### 💻 Code Contributions
-Ready to code? Follow these steps:
+# Commit with a clear message
+git commit -m "feat: Add new feature description"
+```
 
-1. **Find an Issue**
-   - Look for issues labeled `good first issue` or `help wanted`
-   - Comment to express interest
-   - Wait for assignment
+### 5. Push and Create a Pull Request
 
-2. **Create a Branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   # or
-   git checkout -b fix/your-bug-fix
-   ```
+```bash
+# Push to your fork
+git push origin feature/your-feature-name
 
-3. **Make Changes**
-   - Write clean, readable code
-   - Follow the code style guide
-   - Add comments for complex logic
-   - Update related documentation
+# Create a pull request on GitHub
+# Fill out the PR template with details about your changes
+```
 
-4. **Test Your Changes**
-   ```bash
-   npm run build
-   npm run dev
-   # Test manually in browser
-   ```
+### 6. Respond to Feedback
 
-5. **Commit Your Changes**
-   ```bash
-   git add .
-   git commit -m "feat: Add new feature description"
-   ```
+- Address review comments
+- Make requested changes
+- Push updates to your branch
+- Maintainers will merge when approved
 
-6. **Push to Your Fork**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
+## Contribution Guidelines
 
-7. **Create a Pull Request**
-   - Go to GitHub and create a PR
-   - Fill out the PR template
-   - Link related issues
-   - Wait for review
+### Code Style
 
-## 📐 Code Style Guide
-
-### TypeScript/React
+#### TypeScript
 - Use TypeScript for type safety
-- Follow ESLint configuration
-- Use functional components with hooks
-- Write meaningful variable names
-- Add JSDoc comments for functions
+- Avoid `any` types; use proper typing
+- Write meaningful variable and function names
+- Add JSDoc comments for public APIs
 
 ```typescript
 /**
- * Calculates the progress to the next milestone
- * @returns Progress value from 0 to 1
+ * Categorizes a repository based on its metadata
+ * @param metadata - Repository metadata
+ * @returns The determined category
  */
-function getProgressToNextMilestone(): number {
+export function categorizeRepository(metadata: RepositoryMetadata): RepositoryCategory {
   // Implementation
 }
 ```
 
-### Formatting
+#### Formatting
 - Use Prettier for code formatting
-- 2-space indentation
-- Single quotes for strings
-- Semicolons required
-- Max line length: 100 characters
+- Run `pnpm format` before committing
+- Follow ESLint rules
+- Run `pnpm lint` to check
 
-### CSS/Tailwind
-- Use Tailwind CSS classes
-- Avoid inline styles
-- Use semantic class names
-- Follow mobile-first approach
-
-## 🔄 Git Workflow
+#### File Organization
+```
+packages/example/
+├── src/
+│   ├── index.ts           # Main export
+│   ├── types.ts           # Type definitions
+│   ├── utils.ts           # Utility functions
+│   └── __tests__/
+│       ├── utils.test.ts
+│       └── utils.property.ts
+├── package.json
+├── tsconfig.json
+└── README.md
+```
 
 ### Commit Messages
-Follow conventional commits format:
+
+Follow conventional commit format:
 
 ```
 type(scope): subject
@@ -153,132 +124,225 @@ footer
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
-- `style`: Code style (formatting)
+- `style`: Code style (formatting, missing semicolons, etc.)
 - `refactor`: Code refactoring
-- `perf`: Performance improvement
-- `test`: Tests
-- `chore`: Build, dependencies, etc.
+- `test`: Adding or updating tests
+- `chore`: Dependency updates, build changes
 
 **Examples:**
 ```
-feat(timeline): Add milestone filtering
-fix(audio): Fix sound toggle not working
-docs(readme): Update installation instructions
+feat(manifest): Add repository categorization function
+fix(serialization): Handle null values in manifest
+docs(contributing): Update contribution guidelines
+test(categorization): Add property-based tests
 ```
 
-### Branch Naming
-- `feature/description` - New features
-- `fix/description` - Bug fixes
-- `docs/description` - Documentation
-- `refactor/description` - Code refactoring
+### Testing
 
-## 🧪 Testing
-
-### Running Tests
-```bash
-npm run test
-npm run test:watch
-npm run test:coverage
-```
-
-### Writing Tests
-- Write tests for new features
-- Aim for >80% code coverage
+#### Unit Tests
+- Write tests for all new functions
+- Test edge cases and error conditions
 - Use descriptive test names
-- Test edge cases
 
-## 📦 Pull Request Process
-
-### Before Submitting
-- [ ] Code follows style guide
-- [ ] Tests pass locally
-- [ ] Documentation updated
-- [ ] No console errors/warnings
-- [ ] Commits are clean and descriptive
-
-### PR Template
-```markdown
-## Description
-Brief description of changes
-
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Documentation update
-- [ ] Breaking change
-
-## Related Issues
-Closes #123
-
-## Testing
-How to test these changes
-
-## Screenshots
-If applicable, add screenshots
-
-## Checklist
-- [ ] Code follows style guide
-- [ ] Tests added/updated
-- [ ] Documentation updated
-- [ ] No breaking changes
+```typescript
+describe('categorizeRepository', () => {
+  it('should categorize smart contracts correctly', () => {
+    const metadata = {
+      name: 'token-contract',
+      description: 'ERC-20 token',
+      technologies: ['Solidity'],
+    };
+    expect(categorizeRepository(metadata)).toBe('contract');
+  });
+});
 ```
 
-### Review Process
-1. Maintainers review your PR
-2. Address feedback and suggestions
-3. Make requested changes
-4. Re-request review
-5. Merge when approved
+#### Property-Based Tests
+- Use fast-check for property-based testing
+- Test universal properties across many inputs
+- Run minimum 100 iterations
 
-## 🎯 Development Guidelines
+```typescript
+it('should deterministically categorize repositories', () => {
+  fc.assert(
+    fc.property(arbitraryRepositoryMetadata, (metadata) => {
+      const category1 = categorizeRepository(metadata);
+      const category2 = categorizeRepository(metadata);
+      expect(category1).toBe(category2);
+    }),
+    { numRuns: 100 }
+  );
+});
+```
 
-### Performance
-- Minimize bundle size
-- Optimize animations (60 FPS)
-- Lazy load components
-- Cache appropriately
+#### Running Tests
+```bash
+# Run all tests
+pnpm test
 
-### Accessibility
-- Use semantic HTML
-- Add ARIA labels
-- Support keyboard navigation
-- Test with screen readers
+# Run tests in watch mode
+pnpm test --watch
 
-### Security
-- Sanitize user input
-- Avoid hardcoding secrets
-- Use HTTPS for external resources
-- Keep dependencies updated
+# Run specific test file
+pnpm test categorization.test.ts
 
-### Browser Support
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile browsers
+# Run with coverage
+pnpm test --coverage
+```
 
-## 📚 Resources
+### Documentation
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [React Documentation](https://react.dev)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [shadcn/ui](https://ui.shadcn.com)
+#### README Files
+- Include clear project description
+- Add installation instructions
+- Provide usage examples
+- Link to relevant documentation
 
-## 🆘 Getting Help
+#### Code Comments
+- Explain "why", not "what"
+- Use JSDoc for public APIs
+- Keep comments up-to-date
 
-- 💬 [GitHub Discussions](https://github.com/wayruco/wayruco/discussions)
-- 🐛 [GitHub Issues](https://github.com/wayruco/wayruco/issues)
-- 📧 Email: hello@wayru.co
-- 📖 [Documentation](./docs)
+#### Commit Messages
+- Reference related issues: `Fixes #123`
+- Explain the change and its impact
+- Include breaking changes in footer
 
-## 📋 Code of Conduct
+### Pull Request Process
 
-Please read and follow our [Code of Conduct](./CODE_OF_CONDUCT.md). We are committed to providing a welcoming and inclusive environment.
+1. **Update Documentation**
+   - Update README if needed
+   - Add/update JSDoc comments
+   - Update CHANGELOG.md
 
-## 🙏 Thank You!
+2. **Add Tests**
+   - Write unit tests for new code
+   - Add property-based tests for core logic
+   - Ensure all tests pass
 
-Your contributions make WayruCo better. Thank you for being part of our community!
+3. **Run Quality Checks**
+   ```bash
+   pnpm lint
+   pnpm format
+   pnpm type-check
+   pnpm test
+   ```
+
+4. **Create PR with Template**
+   - Describe changes clearly
+   - Reference related issues
+   - Include screenshots if applicable
+   - List breaking changes
+
+5. **Respond to Reviews**
+   - Address all feedback
+   - Ask questions if unclear
+   - Push updates to same branch
+
+6. **Merge**
+   - Maintainers will merge when approved
+   - Squash commits if requested
+   - Delete branch after merge
+
+## Areas for Contribution
+
+### Code
+- Bug fixes and improvements
+- New features and functionality
+- Performance optimizations
+- Test coverage expansion
+
+### Documentation
+- Guides and tutorials
+- API documentation
+- Architecture diagrams
+- Translation to other languages
+
+### Community
+- Bug reports and feature requests
+- Code reviews and feedback
+- Community support in discussions
+- Event organization
+
+### Design
+- UI/UX improvements
+- Visual design enhancements
+- Accessibility improvements
+- Animation and interactions
+
+## Development Workflow
+
+### Setup Development Environment
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Run tests in watch mode
+pnpm test --watch
+
+# Run linter in watch mode
+pnpm lint --watch
+```
+
+### Monorepo Commands
+
+```bash
+# Build all workspaces
+pnpm build
+
+# Build specific workspace
+pnpm build --filter=@wayruco/manifest
+
+# Run tests for specific workspace
+pnpm test --filter=@wayruco/manifest
+
+# Format all code
+pnpm format
+
+# Type check all workspaces
+pnpm type-check
+```
+
+### Debugging
+
+```bash
+# Run with Node debugger
+node --inspect-brk ./node_modules/.bin/vitest run
+
+# Run specific test with debugging
+pnpm test -- --inspect-brk categorization.test.ts
+```
+
+## Getting Help
+
+- **Questions**: Ask in [GitHub Discussions](https://github.com/wayruco/wayruco/discussions)
+- **Bugs**: Report in [GitHub Issues](https://github.com/wayruco/wayruco/issues)
+- **Security**: Email security@wayru.co
+- **General**: Email hello@wayru.co
+
+## Recognition
+
+We recognize all contributors! Your contributions will be:
+- Listed in CONTRIBUTORS.md
+- Mentioned in release notes
+- Credited in commit history
+- Celebrated in community updates
+
+## License
+
+By contributing, you agree that your contributions will be licensed under the MIT License.
+
+## Additional Resources
+
+- [Philosophy](./docs/mission/PHILOSOPHY.md) - Understand our mission
+- [Vision](./docs/mission/VISION.md) - See where we're headed
+- [Architecture](./docs/ARCHITECTURE.md) - Learn the system design
+- [Development Guide](./docs/DEVELOPMENT.md) - Detailed setup instructions
 
 ---
 
-**Happy coding! 🚀**
+Thank you for contributing to WayruCO! Together, we're building a more open and decentralized internet.
