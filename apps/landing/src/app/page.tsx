@@ -1,5 +1,7 @@
 "use client";
 
+// Test deployment workflow - December 31, 2025
+
 import { useState, useEffect, useRef } from "react";
 import { CyberneticScene } from "@/components/CyberneticScene";
 import { NarrativeOverlay } from "@/components/NarrativeOverlay";

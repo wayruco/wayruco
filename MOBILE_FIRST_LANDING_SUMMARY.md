@@ -66,8 +66,13 @@ Successfully implemented a comprehensive mobile-first responsive design system f
 
 ### 5. GitHub Pages Deployment ✅
 
-**Workflow**: `.github/workflows/deploy-pages.yml`
+**Workflows**: 
+- `.github/workflows/deploy-pages.yml` - Automatic deployment on main branch push and tag push
+- `.github/workflows/release.yml` - Complete release workflow with GitHub Pages deployment
+
+**Features**:
 - Automatic deployment on main branch push
+- Automatic deployment on release tag push (e.g., `v1.1.0`)
 - Static export with Next.js
 - Custom domain support (wayru.co)
 - Comprehensive deployment guide

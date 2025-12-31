@@ -10,8 +10,16 @@ The WayruCO landing page is automatically deployed to GitHub Pages on every push
 
 The GitHub Pages deployment is triggered automatically when:
 - Code is pushed to the `main` branch
+- A release tag is pushed (e.g., `v1.1.0`)
 - Changes are made to `apps/landing/**` or `.github/workflows/deploy-pages.yml`
 - Manual workflow dispatch is triggered
+
+### Release Workflow: `release.yml`
+
+The release workflow is triggered when a tag is pushed and includes:
+1. **Create Release**: Creates a GitHub Release with CHANGELOG and LICENSE
+2. **Publish Packages**: Publishes packages to npm (requires `NPM_TOKEN` secret)
+3. **Deploy to GitHub Pages**: Automatically deploys the landing page to GitHub Pages
 
 ### Deployment Process
 
@@ -71,6 +79,36 @@ This will:
 3. Create a git tag (e.g., `v1.1.0`)
 4. Push to GitHub
 5. Trigger the release workflow
+
+### Release Workflow Process
+
+When you push a tag (e.g., `git push origin v1.1.0`), the release workflow automatically:
+
+1. **Create Release Job**:
+   - Checks out code
+   - Installs dependencies
+   - Builds all packages
+   - Runs all tests
+   - Creates a GitHub Release with CHANGELOG and LICENSE
+
+2. **Publish Packages Job** (requires `NPM_TOKEN` secret):
+   - Builds all packages in `packages/` directory
+   - Publishes to npm with public access
+   - Requires npm authentication token
+
+3. **Deploy to GitHub Pages Job**:
+   - Builds the landing app with GitHub Pages configuration
+   - Uploads build artifacts
+   - Deploys to GitHub Pages
+   - Updates the live site at wayru.co
+
+### Monitoring Release Deployments
+
+1. Go to repository → Actions
+2. Select "Release" workflow
+3. View deployment status and logs
+4. Check GitHub Pages deployment status
+5. Verify npm package publication (if applicable)
 
 ## Monitoring Deployments
 
