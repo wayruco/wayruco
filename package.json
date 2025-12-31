@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.0.0",
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "dev": "turbo run dev",
     "dev:landing": "turbo run dev --filter=@wayruco/landing",
