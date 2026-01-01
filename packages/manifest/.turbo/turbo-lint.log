@@ -1,0 +1,7 @@
+
+
+> @wayruco/manifest@1.0.0 lint /home/ed/Documents/wayru/wayruco/packages/manifest
+> eslint src --ext .ts,.tsx
+
+sh: 1: eslint: not found
+[41m[30m ELIFECYCLE [39m[49m [31mCommand failed.[39m

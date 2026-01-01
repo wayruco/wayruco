@@ -95,35 +95,45 @@ const TOOL_KEYWORDS = [
  * 4. Packages: Default for libraries, SDKs, and reusable components
  */
 export function categorizeRepository(metadata: RepositoryMetadata): RepositoryCategory {
-  const combined = `${metadata.name} ${metadata.description} ${metadata.technologies.join(' ')}`.toLowerCase();
+  const combinedText = `${metadata.name} ${metadata.description}`.toLowerCase();
+  const techList = metadata.technologies.map((t) => t.toLowerCase());
 
   // Check for smart contracts (highest priority)
   if (
-    metadata.technologies.some((tech) => ['solidity', 'rust', 'vyper', 'cairo'].includes(tech.toLowerCase())) ||
-    CONTRACT_KEYWORDS.some((keyword) => combined.includes(keyword))
+    techList.some((tech) => ['solidity', 'rust', 'vyper', 'cairo'].includes(tech)) ||
+    CONTRACT_KEYWORDS.some((keyword) => combinedText.includes(keyword))
   ) {
     return 'contract';
   }
 
-  // Check for tools/infrastructure
-  if (TOOL_KEYWORDS.some((keyword) => combined.includes(keyword))) {
+  // Check for tools/infrastructure (2nd priority)
+  if (
+    TOOL_KEYWORDS.some((keyword) => {
+      // Use stricter check for short/dangerous keywords
+      if (['script', 'cli', 'ci', 'cd'].includes(keyword)) {
+        return new RegExp(`\\b${keyword}\\b`).test(combinedText);
+      }
+      return combinedText.includes(keyword);
+    })
+  ) {
     return 'tool';
   }
 
-  // Check for applications
-  if (APP_KEYWORDS.some((keyword) => combined.includes(keyword))) {
-    return 'app';
+  // Check for packages/libraries (3rd priority)
+  // Moved before Apps to ensure "UI libraries" are packages, not apps
+  if (PACKAGE_KEYWORDS.some((keyword) => combinedText.includes(keyword))) {
+    return 'package';
   }
 
-  // Check for packages/libraries
-  if (PACKAGE_KEYWORDS.some((keyword) => combined.includes(keyword))) {
-    return 'package';
+  // Check for applications (4th priority)
+  if (APP_KEYWORDS.some((keyword) => combinedText.includes(keyword))) {
+    return 'app';
   }
 
   // Default to package for SDKs and general libraries
   if (
-    metadata.technologies.some((tech) =>
-      ['typescript', 'javascript', 'python', 'go', 'rust'].includes(tech.toLowerCase())
+    techList.some((tech) =>
+      ['typescript', 'javascript', 'python', 'go', 'rust', 'java', 'c++', 'c#'].includes(tech)
     )
   ) {
     return 'package';
