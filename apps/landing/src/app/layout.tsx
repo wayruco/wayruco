@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
-import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Wayru - Eternal Voyage",
@@ -40,10 +39,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body className="font-sans">
-        <div className="flex flex-col min-h-screen">
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ import { CyberneticScene } from "@/components/CyberneticScene";
 import { NarrativeOverlay } from "@/components/NarrativeOverlay";
 import { NavigationButtons } from "@/components/NavigationButtons";
 import { WayruTimeline } from "@/components/WayruTimeline";
+import { Footer } from "@/components/footer";
 
 export default function Page() {
   const [phase, setPhase] = useState(0);
@@ -97,26 +98,29 @@ export default function Page() {
   }, [reducedMotion]);
 
   return (
-    <main className="relative w-full min-h-screen overflow-x-hidden bg-[#0a0e1a]">
-      {/* Cybernetic Scene */}
-      <div className="fixed inset-0 pointer-events-none">
-        <CyberneticScene phase={phase} />
-      </div>
+    <>
+      <main className="relative w-full min-h-screen overflow-x-hidden bg-[#0a0e1a]">
+        {/* Cybernetic Scene */}
+        <div className="fixed inset-0 pointer-events-none">
+          <CyberneticScene phase={phase} />
+        </div>
 
-      {/* Text Overlay */}
-      <NarrativeOverlay phase={phase} />
+        {/* Text Overlay */}
+        <NarrativeOverlay phase={phase} />
 
-      {/* Wayru Timeline */}
-      <WayruTimeline 
-        phase={phase} 
-        onMilestoneSelect={(index) => setIsPaused(true)}
-      />
+        {/* Wayru Timeline */}
+        <WayruTimeline 
+          phase={phase} 
+          onMilestoneSelect={(index) => setIsPaused(true)}
+        />
 
-      {/* Navigation Buttons */}
-      <NavigationButtons />
+        {/* Navigation Buttons */}
+        <NavigationButtons />
 
-      {/* Spacer for scroll functionality */}
-      <div className="h-[500vh]" />
-    </main>
+        {/* Spacer for scroll functionality - with padding at bottom for footer */}
+        <div className="h-[500vh] pb-32" />
+      </main>
+      <Footer phase={phase} />
+    </>
   );
 }

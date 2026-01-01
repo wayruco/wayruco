@@ -5,13 +5,21 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Github, Globe, Calendar, Code, Package } from "lucide-react";
 
-export function Footer() {
+interface FooterProps {
+  phase?: number;
+}
+
+export function Footer({ phase = 1 }: FooterProps) {
   const version = getVersionString();
   const buildInfo = getBuildInfo();
   const environment = getEnvironment();
 
+  // Show footer only when phase is > 0.7 (70% through animation)
+  const showFooter = phase > 0.7;
+  const opacity = Math.max(0, (phase - 0.7) / 0.3); // Fade in over last 30%
+
   return (
-    <footer className="sticky bottom-0 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+    <footer className="sticky bottom-0 border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 transition-opacity duration-500" style={{ opacity: showFooter ? opacity : 0, pointerEvents: showFooter ? 'auto' : 'none' }}>
       <div className="container mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Left side - Company info */}
