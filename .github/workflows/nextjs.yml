@@ -1,16 +1,9 @@
 name: Deploy Next.js site to Pages (Monorepo)
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
     tags:
       - 'v*'
-    paths:
-      - 'apps/landing/**'
-      - '.github/workflows/nextjs.yml'
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
