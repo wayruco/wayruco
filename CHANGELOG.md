@@ -16,6 +16,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.8] - 2026-01-01
+
+### Other
+- chore: auto-commit before version bump (0973599)
+
+
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+- 
+
 ## [1.1.7] - 2026-01-01
 
 ### Changed
