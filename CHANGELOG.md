@@ -16,6 +16,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.9] - 2026-01-01
+
+### Changed
+- fix: update landing app version to 1.1.8 to match root version (e61d5fc)
+
+### Other
+- chore: auto-commit before version bump (8ee4d55)
+
+
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+- 
+
 ## [1.1.8] - 2026-01-01
 
 ### Other
