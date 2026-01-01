@@ -2501,6 +2501,9 @@ body{
 .ease-out{
   animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
+.paused{
+  animation-play-state: paused;
+}
 .\[--cell-size\:2rem\]{
   --cell-size: 2rem;
 }

@@ -72,7 +72,12 @@ export default function Page() {
       
       setPhase(scrollPhase);
 
-      // Resume auto-progress after scroll stops
+      // If footer is visible (phase > 0.85), don't resume auto-progress - keep it paused
+      if (scrollPhase > 0.85) {
+        return;
+      }
+
+      // Resume auto-progress after scroll stops (only if footer not visible)
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         const startTime = Date.now();
