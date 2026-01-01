@@ -175,6 +175,34 @@ versionData.git.branch = runGitCommand(
 );
 
 fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2));
+
+// Sync landing app version.json
+const landingVersionFile = path.join(__dirname, "../apps/landing/version.json");
+try {
+  const landingVersionData = JSON.parse(fs.readFileSync(landingVersionFile, "utf8"));
+  landingVersionData.version = newVersion;
+  landingVersionData.buildNumber = buildNumber;
+  landingVersionData.releaseDate = today;
+  landingVersionData.build.timestamp = new Date().toISOString();
+  landingVersionData.git.commit = versionData.git.commit;
+  landingVersionData.git.branch = versionData.git.branch;
+  fs.writeFileSync(landingVersionFile, JSON.stringify(landingVersionData, null, 2));
+  console.log(`✅ Landing app version.json synced`);
+} catch (error) {
+  console.warn(`⚠️  Could not sync landing app version.json: ${error.message}`);
+}
+
+// Sync landing app package.json
+const landingPackageFile = path.join(__dirname, "../apps/landing/package.json");
+try {
+  const landingPackageData = JSON.parse(fs.readFileSync(landingPackageFile, "utf8"));
+  landingPackageData.version = newVersion;
+  fs.writeFileSync(landingPackageFile, JSON.stringify(landingPackageData, null, 2));
+  console.log(`✅ Landing app package.json synced`);
+} catch (error) {
+  console.warn(`⚠️  Could not sync landing app package.json: ${error.message}`);
+}
+
 console.log(`✅ Version bumped: ${currentVersion} → ${newVersion}`);
 console.log(`📦 Build number: ${buildNumber}`);
 console.log(`📅 Release date: ${today}`);
