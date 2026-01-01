@@ -1,7 +1,7 @@
 {
-  "version": "1.1.2",
-  "buildNumber": "2025.12.31.578",
-  "releaseDate": "2025-12-31",
+  "version": "1.1.3",
+  "buildNumber": "2026.01.01.193",
+  "releaseDate": "2026-01-01",
   "metadata": {
     "name": "WayruCo",
     "description": "Interactive timeline showcasing Wayru Network's journey from founding to open source transition. Features a cybernetic visualization with scroll-based milestone tracking.",
@@ -11,14 +11,14 @@
     "homepage": "https://wayru.co"
   },
   "git": {
-    "commit": "18c29f6774e0c3c229317af1d5d1d01181232a95",
+    "commit": "0fe4e1e6577574aca6f86b7a443234f91a4b66b4",
     "branch": "main",
     "tag": ""
   },
   "build": {
     "environment": "production",
     "nodeVersion": "22.18.0",
-    "timestamp": "2025-12-31T23:23:03.626Z",
+    "timestamp": "2026-01-01T00:51:43.094Z",
     "duration": 0
   },
   "dependencies": {
