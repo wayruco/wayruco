@@ -16,6 +16,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.5] - 2026-01-01
+
+### Changed
+- chore: add separate release script and update version scripts (30fa5c6)
+
+
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+- 
+
 ## [1.1.4] - 2026-01-01
 
 ### Changed
