@@ -49,4 +49,13 @@ for (const base of dirs) {
     }
 }
 
+// ---- Additional sync for landing app's version.json ----
+const landingVersionPath = path.join(__dirname, '..', 'apps', 'landing', 'version.json');
+if (fs.existsSync(landingVersionPath)) {
+    // Copy the root version.json content to the landing version file
+    const rootData = JSON.parse(fs.readFileSync(rootVersionPath, 'utf8'));
+    fs.writeFileSync(landingVersionPath, JSON.stringify(rootData, null, 2) + '\n');
+    console.log(`🔧 Synced apps/landing/version.json to version ${version}`);
+}
+
 console.log('✅ Version synchronization complete.');
