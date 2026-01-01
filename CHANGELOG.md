@@ -16,6 +16,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - 
 
+## [1.1.4] - 2026-01-01
+
+### Changed
+- fix(ci): update pnpm to v9 and restore pnpm-lock.yaml to fix CI cache error (18c29f6)
+- fix(ci): update github actions to latest versions to resolve deprecation failures (5b3c24c)
+- Fix: Update deprecated actions/upload-artifact from v3 to v4 (908ee4b)
+- Update deployment infrastructure and documentation (621b3ef)
+
+### Fixed
+- fix(ci): resolve lint and test failures in manifest package (0fe4e1e)
+- fix(ci): remove pnpm version from action config to avoid conflict with package.json (92a298d)
+
+### Other
+- chore: bump version to 1.1.3 (6ee0851)
+- chore: bump version to 1.1.2 (a7dd512)
+- chore: push local changes and build output (7596e5f)
+
+
+
+### Added
+- 
+
+### Changed
+- 
+
+### Fixed
+- 
+
 ## [1.1.3] - 2026-01-01
 
 ### Changed
