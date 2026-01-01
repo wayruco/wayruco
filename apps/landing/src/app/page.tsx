@@ -97,9 +97,9 @@ export default function Page() {
   }, [reducedMotion]);
 
   return (
-    <main className="relative w-full h-screen overflow-x-hidden bg-[#0a0e1a]">
+    <main className="relative w-full min-h-screen overflow-x-hidden bg-[#0a0e1a]">
       {/* Cybernetic Scene */}
-      <div className="fixed inset-0">
+      <div className="fixed inset-0 pointer-events-none">
         <CyberneticScene phase={phase} />
       </div>
 

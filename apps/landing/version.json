@@ -1,6 +1,6 @@
 {
-  "version": "1.1.8",
-  "buildNumber": "2026.01.01.285",
+  "version": "1.1.9",
+  "buildNumber": "2026.01.01.286",
   "releaseDate": "2026-01-01",
   "metadata": {
     "name": "WayruCo",
@@ -35,15 +35,13 @@
   },
   "changelog": {
     "current": {
-      "version": "1.0.0",
-      "date": "2024-12-28",
+      "version": "1.1.9",
+      "date": "2026-01-01",
       "changes": [
-        "Initial release",
-        "Setup Next.js application",
-        "Configure shadcn/ui components",
-        "Add Tailwind CSS styling",
-        "Setup Supabase authentication",
-        "Configure Stripe payments"
+        "Fix footer positioning during scroll animations",
+        "Make footer sticky at bottom to prevent overlap with animation content",
+        "Improve z-index layering for better visual hierarchy",
+        "Add pointer-events-none to fixed cybernetic scene"
       ]
     }
   }

@@ -40,7 +40,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
       </head>
       <body className="font-sans">
-        <div className="min-h-screen flex flex-col">
+        <div className="flex flex-col min-h-screen">
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
