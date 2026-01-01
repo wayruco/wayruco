@@ -1,6 +1,6 @@
 {
-  "version": "1.1.9",
-  "buildNumber": "2026.01.01.220",
+  "version": "1.1.10",
+  "buildNumber": "2026.01.01.236",
   "releaseDate": "2026-01-01",
   "metadata": {
     "name": "WayruCo",
@@ -11,14 +11,14 @@
     "homepage": "https://wayru.co"
   },
   "git": {
-    "commit": "8ee4d55d9104baee4cf0716846e166e137c9f79b",
+    "commit": "bfa8455cc7c61df5033f29eab2f442defe6aba3d",
     "branch": "main",
     "tag": ""
   },
   "build": {
     "environment": "production",
     "nodeVersion": "22.18.0",
-    "timestamp": "2026-01-01T03:28:11.940Z",
+    "timestamp": "2026-01-01T05:29:47.461Z",
     "duration": 0
   },
   "dependencies": {
